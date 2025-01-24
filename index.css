@@ -2,6 +2,18 @@ body{
     background-color: rgb(57, 57, 60);
     
 }
+#logos ol{
+    display:flex;
+    list-style: none;
+    position: relative;
+    right:50px;
+}
+.n
+{
+    position: relative;
+    left:8px;
+}
+
 #intro
 {
     color:white
@@ -79,11 +91,30 @@ button
     width:70px;
     background-color: rgb(0, 81, 255);;
 }
-#logos
+
+#MovieSection
 {
-    margin-left:115px;
+    margin-left:105px;
+}
+#mdl
+{
+    margin-left:105px;
 }
 .L
 {
     margin:10px;
+}
+#frm,#loc
+{
+    margin-left:105px;
+}
+#f
+{
+    display:flex;
+    flex-direction: column;
+}
+#html,#css,#js
+{
+    position:relative;
+    bottom:18px;
 }
