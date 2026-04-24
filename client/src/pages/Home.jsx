@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { FiArrowRight, FiGithub, FiMail, FiDownload } from "react-icons/fi";
+import { FiArrowRight, FiGithub, FiMail, FiDownload, FiTerminal, FiZap, FiDatabase, FiCloud } from "react-icons/fi";
 import SkillsSection from "../components/SkillsSection";
 import ProjectCard from "../components/ProjectCard";
 import projects from "../data/projects";
@@ -15,10 +15,10 @@ const ROLES = [
 ];
 
 const STATS = [
-  { value: "6+", label: "AI Projects Shipped", icon: "🚀" },
-  { value: "95%", label: "Process Acceleration", icon: "⚡" },
-  { value: "15K+", label: "Training Samples", icon: "🧠" },
-  { value: "$0", label: "Cloud Inference Cost", icon: "💎" },
+  { value: "6+", label: "AI Projects Shipped", icon: <FiTerminal /> },
+  { value: "95%", label: "Process Acceleration", icon: <FiZap /> },
+  { value: "15K+", label: "Training Samples", icon: <FiDatabase /> },
+  { value: "$0", label: "Cloud Inference Cost", icon: <FiCloud /> },
 ];
 
 function Counter({ target }) {
@@ -120,10 +120,11 @@ export default function Home() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight"
+            className="font-display text-4xl md:text-7xl font-semibold text-white leading-none mb-4 tracking-tight"
           >
-            Ameer{" "}
-            <span className="gradient-text-animate">Sultan</span>
+            <span className="text-[#6366F1]">{"<"}</span>
+            Ameer.dev{" "}
+            <span className="text-[#6366F1]">{" />"}</span>
           </motion.h1>
 
           {/* Animated role */}
@@ -145,12 +146,7 @@ export default function Home() {
 
           {/* Description */}
           <motion.p variants={itemVariants} className="text-[#94A3B8] text-lg max-w-2xl mb-10 leading-relaxed">
-            I engineer production-grade AI systems — RAG pipelines, NLP automation, and LLM-powered tools.{" "}
-            <span className="text-white font-medium">6 deployed projects</span>
-            {" · "}
-            <span className="text-white font-medium">95% workflow acceleration</span>
-            {" · "}
-            <span className="text-white font-medium">zero-cost inference architectures</span>
+            I am passionate about turning complex problems into intelligent, scalable solutions — whether that means fine-tuning language models, architecting cloud-native pipelines, or shipping full-stack applications from backend to mobile. I thrive at the intersection of AI research and real-world engineering, where ideas meet production.
           </motion.p>
 
           {/* CTA buttons */}
