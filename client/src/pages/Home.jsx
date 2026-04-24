@@ -120,7 +120,7 @@ export default function Home() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-6xl md:text-8xl font-extrabold text-white leading-none mb-4 tracking-tight"
+            className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight"
           >
             Ameer{" "}
             <span className="gradient-text-animate">Sultan</span>
@@ -204,7 +204,7 @@ export default function Home() {
               className="stat-card"
             >
               <div className="text-2xl mb-2">{stat.icon}</div>
-              <p className="text-3xl font-extrabold gradient-text font-display mb-1">
+              <p className="text-3xl font-bold gradient-text font-display mb-1">
                 {statsVisible ? <Counter target={stat.value} /> : stat.value}
               </p>
               <p className="text-xs text-[#94A3B8] leading-snug">{stat.label}</p>
@@ -226,7 +226,7 @@ export default function Home() {
         >
           <div>
             <p className="section-label">Selected work</p>
-            <h2 className="font-display text-4xl font-extrabold text-white">Featured Projects</h2>
+            <h2 className="font-display text-4xl font-bold text-white">Featured Projects</h2>
             <div className="section-divider" />
           </div>
           <Link
@@ -267,7 +267,7 @@ export default function Home() {
         >
           <div className="orb" style={{ width: 400, height: 400, background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
           <p className="section-label justify-center">Open to opportunities</p>
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Let's Build Something Together</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Something Together</h2>
           <p className="text-[#94A3B8] max-w-lg mx-auto mb-8">
             Looking for AI developer roles, internships, and freelance collaborations. I respond within 24 hours.
           </p>

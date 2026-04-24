@@ -14,7 +14,7 @@ export default function Projects() {
     <div className="min-h-screen pt-28 pb-20 px-6 max-w-6xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <p className="section-label">My work</p>
-        <h1 className="font-display text-5xl font-extrabold text-white mb-2">
+        <h1 className="font-display text-5xl font-bold text-white mb-2">
           All <span className="gradient-text">Projects</span>
         </h1>
         <div className="section-divider" />
