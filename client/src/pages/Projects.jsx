@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 import projects from "../data/projects";
 
-const categories = ["All", "Frontend", "Backend", "Full Stack", "Web App", "Mobile App", "Desktop App", "Scripts"];
+// Dynamically generate categories based on the projects to ensure no filters are missed
+const categories = ["All", ...new Set(projects.map((p) => p.category))];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
