@@ -63,15 +63,15 @@ export default function Footer() {
         <div className="flex items-center justify-between border-t border-white/5 pt-6">
           <p className="text-[#94A3B8] text-xs">
             Built with{" "}
-            <span className="text-[#6366F1]">React</span> +{" "}
-            <span className="text-[#6366F1]">Framer Motion</span> +{" "}
-            <span className="text-[#6366F1]">Tailwind CSS</span>
+            <span className="text-[#FACC15]">React</span> +{" "}
+            <span className="text-[#FACC15]">Framer Motion</span> +{" "}
+            <span className="text-[#FACC15]">Tailwind CSS</span>
           </p>
           <motion.button
             onClick={scrollTop}
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-9 h-9 rounded-xl bg-[#1E293B] border border-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#6366F1]/30 transition-all"
+            className="w-9 h-9 rounded-xl bg-[#111111] border border-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#FACC15]/30 transition-all"
           >
             <FiArrowUp size={15} />
           </motion.button>

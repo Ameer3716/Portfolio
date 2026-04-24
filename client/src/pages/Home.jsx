@@ -88,7 +88,7 @@ export default function Home() {
             className="orb"
             style={{
               width: 600, height: 600,
-              background: "radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(250, 204, 21,0.14) 0%, transparent 70%)",
               top: "10%", left: "50%", transform: "translateX(-50%)",
             }}
           />
@@ -96,7 +96,7 @@ export default function Home() {
             className="orb"
             style={{
               width: 300, height: 300,
-              background: "radial-gradient(circle, rgba(129,140,248,0.1) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(253, 224, 71,0.1) 0%, transparent 70%)",
               bottom: "20%", right: "10%",
               animationDelay: "3s",
             }}
@@ -111,7 +111,7 @@ export default function Home() {
         >
           {/* Availability badge */}
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1E293B]/80 border border-[#6366F1]/20 text-sm text-[#A5B4FC]">
+            <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#111111]/80 border border-[#FACC15]/20 text-sm text-[#FEF08A]">
               <span className="available-dot" />
               <span className="font-mono text-xs tracking-wider">Available for Remote Work</span>
             </span>
@@ -180,7 +180,7 @@ export default function Home() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-0.5 h-8 rounded-full bg-gradient-to-b from-[#6366F1] to-transparent"
+            className="w-0.5 h-8 rounded-full bg-gradient-to-b from-[#FACC15] to-transparent"
           />
         </motion.div>
       </section>
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
           <Link
             to="/projects"
-            className="hidden md:flex items-center gap-2 text-sm text-[#A5B4FC] hover:text-white transition-colors group"
+            className="hidden md:flex items-center gap-2 text-sm text-[#FEF08A] hover:text-white transition-colors group"
           >
             View all 20+
             <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -256,10 +256,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative rounded-3xl overflow-hidden border border-[#6366F1]/20 p-10 md:p-16 text-center"
-          style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, rgba(15,23,42,0.8) 60%)" }}
+          className="relative rounded-3xl overflow-hidden border border-[#FACC15]/20 p-10 md:p-16 text-center"
+          style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(250, 204, 21,0.15) 0%, rgba(15,23,42,0.8) 60%)" }}
         >
-          <div className="orb" style={{ width: 400, height: 400, background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
+          <div className="orb" style={{ width: 400, height: 400, background: "radial-gradient(circle, rgba(250, 204, 21,0.15) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
           <p className="section-label justify-center">Open to opportunities</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Something Together</h2>
           <p className="text-[#94A3B8] max-w-lg mx-auto mb-8">

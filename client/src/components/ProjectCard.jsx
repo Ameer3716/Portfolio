@@ -23,23 +23,23 @@ export default function ProjectCard({ project, index }) {
   const handleMouseLeave = () => { x.set(0); y.set(0); };
 
   const categoryColors = {
-    "AI": "#6366F1",
-    "Backend": "#818CF8",
-    "Frontend": "#A5B4FC",
-    "Full Stack": "#6366F1",
+    "AI": "#FACC15",
+    "Backend": "#FDE047",
+    "Frontend": "#FEF08A",
+    "Full Stack": "#FACC15",
     "Mobile App": "#8B5CF6",
     "DevOps": "#06B6D4",
     "Cloud": "#0EA5E9",
     "Web3": "#F59E0B",
     "Healthtech": "#10B981",
-    "SaaS": "#6366F1",
+    "SaaS": "#FACC15",
     "NLP / Fine-tuning": "#A855F7",
-    "Web App": "#6366F1",
-    "Desktop App": "#6366F1",
-    "Scripts": "#6366F1",
-    "AI Automation": "#6366F1",
+    "Web App": "#FACC15",
+    "Desktop App": "#FACC15",
+    "Scripts": "#FACC15",
+    "AI Automation": "#FACC15",
   };
-  const catColor = categoryColors[project.category] || "#6366F1";
+  const catColor = categoryColors[project.category] || "#FACC15";
 
   return (
     <motion.div
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, index }) {
       className="relative group"
     >
       <div
-        className="relative bg-[#1E293B]/70 backdrop-blur-sm rounded-2xl border border-white/5 p-6 flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 group-hover:border-[#6366F1]/30"
+        className="relative bg-[#111111]/70 backdrop-blur-sm rounded-2xl border border-white/5 p-6 flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 group-hover:border-[#FACC15]/30"
         style={{ transform: "translateZ(0)" }}
       >
         {/* Dynamic glow on hover */}
@@ -99,7 +99,7 @@ export default function ProjectCard({ project, index }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-[0.95rem] font-bold text-white leading-snug relative z-10 group-hover:text-[#A5B4FC] transition-colors duration-200">
+        <h3 className="text-[0.95rem] font-bold text-white leading-snug relative z-10 group-hover:text-[#FEF08A] transition-colors duration-200">
           {project.title}
         </h3>
 
@@ -142,7 +142,7 @@ export default function ProjectCard({ project, index }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-xs text-[#94A3B8] hover:text-[#A5B4FC] transition-colors"
+              className="flex items-center gap-1.5 text-xs text-[#94A3B8] hover:text-[#FEF08A] transition-colors"
             >
               <FiExternalLink size={13} /> Live Demo
             </a>

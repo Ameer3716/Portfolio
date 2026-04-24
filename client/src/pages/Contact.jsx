@@ -19,7 +19,7 @@ function FloatingInput({ label, type = "text", value, onChange, placeholder, req
       <label
         className={`absolute left-4 transition-all duration-200 pointer-events-none z-10 ${
           active
-            ? "top-2 text-[10px] text-[#A5B4FC] font-mono tracking-wider"
+            ? "top-2 text-[10px] text-[#FEF08A] font-mono tracking-wider"
             : "top-1/2 -translate-y-1/2 text-sm text-[#94A3B8]"
         }`}
       >
@@ -33,12 +33,12 @@ function FloatingInput({ label, type = "text", value, onChange, placeholder, req
         onBlur={() => setFocused(false)}
         placeholder={active ? placeholder : ""}
         required={required}
-        className="w-full bg-[#0F172A] border border-white/10 rounded-xl px-4 pt-6 pb-2.5 text-white text-sm focus:outline-none focus:border-[#6366F1]/60 transition-all duration-200 placeholder-[#94A3B8]/30"
+        className="w-full bg-[#000000] border border-white/10 rounded-xl px-4 pt-6 pb-2.5 text-white text-sm focus:outline-none focus:border-[#FACC15]/60 transition-all duration-200 placeholder-[#94A3B8]/30"
       />
       {active && (
         <motion.div
           layoutId={`underline-${label}`}
-          className="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-xl bg-gradient-to-r from-[#6366F1] to-[#A5B4FC]"
+          className="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-xl bg-gradient-to-r from-[#FACC15] to-[#FEF08A]"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: focused ? 1 : 0 }}
           transition={{ duration: 0.2 }}
@@ -113,7 +113,7 @@ export default function Contact() {
                 <label
                   className={`absolute left-4 transition-all duration-200 pointer-events-none z-10 ${
                     form.message
-                      ? "top-2 text-[10px] text-[#A5B4FC] font-mono tracking-wider"
+                      ? "top-2 text-[10px] text-[#FEF08A] font-mono tracking-wider"
                       : "top-4 text-sm text-[#94A3B8]"
                   }`}
                 >
@@ -124,7 +124,7 @@ export default function Contact() {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   required
-                  className="w-full bg-[#0F172A] border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white text-sm focus:outline-none focus:border-[#6366F1]/60 transition-all duration-200 resize-none"
+                  className="w-full bg-[#000000] border border-white/10 rounded-xl px-4 pt-7 pb-3 text-white text-sm focus:outline-none focus:border-[#FACC15]/60 transition-all duration-200 resize-none"
                 />
               </div>
 
@@ -186,11 +186,11 @@ export default function Contact() {
                     href={s.href}
                     target={s.href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
-                    className="flex items-center gap-3 py-2.5 px-3.5 rounded-xl bg-[#0F172A]/60 border border-white/5 text-[#94A3B8] hover:text-[#A5B4FC] hover:border-[#6366F1]/30 transition-all duration-200 group"
+                    className="flex items-center gap-3 py-2.5 px-3.5 rounded-xl bg-[#000000]/60 border border-white/5 text-[#94A3B8] hover:text-[#FEF08A] hover:border-[#FACC15]/30 transition-all duration-200 group"
                   >
-                    <span className="text-[#6366F1]">{s.icon}</span>
+                    <span className="text-[#FACC15]">{s.icon}</span>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] text-[#6366F1] font-mono">{s.label}</p>
+                      <p className="text-[10px] text-[#FACC15] font-mono">{s.label}</p>
                       <p className="text-xs truncate">{s.value}</p>
                     </div>
                     <FiArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -205,7 +205,7 @@ export default function Contact() {
               <ul className="space-y-2.5">
                 {["Response within 24 hours", "Open to async communication", "Can start immediately", "Remote-first preferred"].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-[#94A3B8]">
-                    <span className="text-[#6366F1] text-xs">▸</span>
+                    <span className="text-[#FACC15] text-xs">▸</span>
                     {item}
                   </li>
                 ))}

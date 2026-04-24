@@ -60,7 +60,7 @@ export default function About() {
           <motion.div variants={itemVariants} className="md:col-span-3 space-y-6">
             <div className="card-glass p-7">
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="text-[#6366F1]">//</span> About Me
+                <span className="text-[#FACC15]">//</span> About Me
               </h3>
               <p className="text-[#94A3B8] leading-relaxed mb-4">
                 I'm a final-year Software Engineering student at{" "}
@@ -69,9 +69,9 @@ export default function About() {
               </p>
               <p className="text-[#94A3B8] leading-relaxed mb-4">
                 My focus is on{" "}
-                <span className="text-[#A5B4FC] font-medium">retrieval-augmented generation</span>,{" "}
-                <span className="text-[#A5B4FC] font-medium">NLP automation</span>, and{" "}
-                <span className="text-[#A5B4FC] font-medium">LLM integration</span> — with a hard constraint on
+                <span className="text-[#FEF08A] font-medium">retrieval-augmented generation</span>,{" "}
+                <span className="text-[#FEF08A] font-medium">NLP automation</span>, and{" "}
+                <span className="text-[#FEF08A] font-medium">LLM integration</span> — with a hard constraint on
                 cost-efficiency (most of my systems run on CPU, zero API fees).
               </p>
               <p className="text-[#94A3B8] leading-relaxed">
@@ -83,7 +83,7 @@ export default function About() {
             {/* Links */}
             <div className="card-glass p-7">
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="text-[#6366F1]">//</span> Find Me
+                <span className="text-[#FACC15]">//</span> Find Me
               </h3>
               <div className="grid grid-cols-1 gap-3">
                 {[
@@ -96,9 +96,9 @@ export default function About() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/5 text-[#94A3B8] hover:text-[#A5B4FC] hover:border-[#6366F1]/30 transition-all duration-200 group"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#000000]/60 border border-white/5 text-[#94A3B8] hover:text-[#FEF08A] hover:border-[#FACC15]/30 transition-all duration-200 group"
                   >
-                    <span className="text-[#6366F1] group-hover:scale-110 transition-transform">{link.icon}</span>
+                    <span className="text-[#FACC15] group-hover:scale-110 transition-transform">{link.icon}</span>
                     <span className="text-sm">{link.label}</span>
                   </a>
                 ))}
@@ -114,11 +114,11 @@ export default function About() {
           <motion.div variants={itemVariants} className="md:col-span-2 space-y-5">
             <div className="card-glass p-6">
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="text-[#6366F1]">//</span> Education
+                <span className="text-[#FACC15]">//</span> Education
               </h3>
-              <div className="relative pl-4 border-l border-[#6366F1]/30">
+              <div className="relative pl-4 border-l border-[#FACC15]/30">
                 <p className="font-semibold text-white text-sm">BS Software Engineering</p>
-                <p className="text-[#A5B4FC] text-sm">FAST-NUCES, CFD Campus</p>
+                <p className="text-[#FEF08A] text-sm">FAST-NUCES, CFD Campus</p>
                 <p className="text-xs text-[#94A3B8] mt-1">2022 – 2026 · 8th Semester</p>
                 <p className="text-xs text-[#94A3B8]">Focus: Full Stack, React, Node.js, AI</p>
               </div>
@@ -126,7 +126,7 @@ export default function About() {
 
             <div className="card-glass p-6">
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="text-[#6366F1]">//</span> I'm Looking For
+                <span className="text-[#FACC15]">//</span> I'm Looking For
               </h3>
               <ul className="space-y-2.5">
                 {[
@@ -136,7 +136,7 @@ export default function About() {
                   "Internship → Full-time opportunities",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[#94A3B8]">
-                    <span className="text-[#6366F1] mt-0.5 shrink-0">▸</span>
+                    <span className="text-[#FACC15] mt-0.5 shrink-0">▸</span>
                     {item}
                   </li>
                 ))}
@@ -146,7 +146,7 @@ export default function About() {
             {/* Mini timeline */}
             <div className="card-glass p-6">
               <h3 className="font-semibold text-white mb-5 flex items-center gap-2">
-                <span className="text-[#6366F1]">//</span> Timeline
+                <span className="text-[#FACC15]">//</span> Timeline
               </h3>
               <div className="space-y-5">
                 {timelineItems.map((item, i) => (
@@ -158,13 +158,13 @@ export default function About() {
                     transition={{ delay: i * 0.1 }}
                     className="relative pl-5"
                   >
-                    <div className="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-[#6366F1]" />
+                    <div className="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-[#FACC15]" />
                     {i < timelineItems.length - 1 && (
-                      <div className="absolute left-[3.5px] top-4 w-0.5 h-full bg-[#6366F1]/20" />
+                      <div className="absolute left-[3.5px] top-4 w-0.5 h-full bg-[#FACC15]/20" />
                     )}
-                    <span className="font-mono text-[10px] text-[#6366F1] tracking-wider">{item.year}</span>
+                    <span className="font-mono text-[10px] text-[#FACC15] tracking-wider">{item.year}</span>
                     <p className="text-sm font-semibold text-white">{item.title}</p>
-                    <p className="text-[11px] text-[#A5B4FC]">{item.subtitle}</p>
+                    <p className="text-[11px] text-[#FEF08A]">{item.subtitle}</p>
                     <p className="text-xs text-[#94A3B8] mt-1 leading-relaxed">{item.desc}</p>
                   </motion.div>
                 ))}

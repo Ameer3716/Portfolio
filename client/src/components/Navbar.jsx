@@ -29,7 +29,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#0F172A]/85 backdrop-blur-xl border-b border-white/5 shadow-xl shadow-black/20"
+          ? "bg-[#000000]/85 backdrop-blur-xl border-b border-white/5 shadow-xl shadow-black/20"
           : "bg-transparent"
       }`}
     >
@@ -54,7 +54,7 @@ export default function Navbar() {
               {pathname === l.to && (
                 <motion.span
                   layoutId="nav-pill"
-                  className="absolute inset-0 rounded-lg bg-[#6366F1]/15 border border-[#6366F1]/25"
+                  className="absolute inset-0 rounded-lg bg-[#FACC15]/15 border border-[#FACC15]/25"
                   transition={{ type: "spring", stiffness: 400, damping: 35 }}
                 />
               )}
@@ -100,7 +100,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden bg-[#1E293B]/95 backdrop-blur-xl border-t border-white/5 overflow-hidden"
+            className="md:hidden bg-[#111111]/95 backdrop-blur-xl border-t border-white/5 overflow-hidden"
           >
             <div className="px-6 py-5 flex flex-col gap-3">
               {links.map((l, i) => (
@@ -113,7 +113,7 @@ export default function Navbar() {
                   <Link
                     to={l.to}
                     className={`block py-2 text-sm font-medium ${
-                      pathname === l.to ? "text-[#A5B4FC]" : "text-[#94A3B8]"
+                      pathname === l.to ? "text-[#FEF08A]" : "text-[#94A3B8]"
                     }`}
                   >
                     {l.label}

@@ -5,19 +5,19 @@ const skillGroups = [
   {
     label: "Machine Learning",
     icon: "🧠",
-    color: "#6366F1",
+    color: "#FACC15",
     skills: ["LangChain", "HuggingFace", "TinyLlama", "T5", "GPT-2", "FAISS", "RAG", "Transformers", "Seq2Seq"],
   },
   {
     label: "Backend",
     icon: "🔌",
-    color: "#818CF8",
+    color: "#FDE047",
     skills: ["Python", "Node.js", "Express.js", "FastAPI", "REST APIs", "MongoDB"],
   },
   {
     label: "Frontend",
     icon: "🖥️",
-    color: "#A5B4FC",
+    color: "#FEF08A",
     skills: ["React.js", "Tailwind CSS", "Framer Motion", "Streamlit", "TypeScript"],
   },
   {
@@ -133,16 +133,16 @@ export default function SkillsSection() {
             <div key={skill.name}>
               <div className="flex justify-between mb-1.5">
                 <span className="text-sm text-[#94A3B8]">{skill.name}</span>
-                <span className="text-xs text-[#A5B4FC] font-mono">{skill.level}%</span>
+                <span className="text-xs text-[#FEF08A] font-mono">{skill.level}%</span>
               </div>
-              <div className="h-1.5 bg-[#0F172A] rounded-full overflow-hidden">
+              <div className="h-1.5 bg-[#000000] rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.9, delay: 0.1 + i * 0.08, ease: [0.4, 0, 0.2, 1] }}
                   className="h-full rounded-full"
-                  style={{ background: `linear-gradient(90deg, #6366F1, #A5B4FC)` }}
+                  style={{ background: `linear-gradient(90deg, #FACC15, #FEF08A)` }}
                 />
               </div>
             </div>

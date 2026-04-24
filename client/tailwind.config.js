@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#6366F1",
-        secondary: "#818CF8",
-        dark: "#0F172A",
-        surface: "#1E293B",
-        card: "#1A2744",
+        primary: "#FACC15",
+        secondary: "#FDE047",
+        dark: "#000000",
+        surface: "#050505",
+        card: "#0A0A0A",
         muted: "#94A3B8",
       },
       fontFamily: {

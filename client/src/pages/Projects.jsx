@@ -20,7 +20,7 @@ export default function Projects() {
         <div className="section-divider" />
         <p className="text-[#94A3B8] mb-10 max-w-2xl">
           End-to-end systems built for real-world impact — from zero-cost RAG pipelines to autonomous AI agents.
-          <span className="text-[#A5B4FC] ml-2 font-mono text-sm">{projects.length} total</span>
+          <span className="text-[#FEF08A] ml-2 font-mono text-sm">{projects.length} total</span>
         </p>
       </motion.div>
 
@@ -41,8 +41,8 @@ export default function Projects() {
               whileTap={{ scale: 0.96 }}
               className={`relative text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 flex items-center gap-1.5 ${
                 active === cat
-                  ? "bg-[#6366F1] text-white border-[#6366F1] shadow-lg shadow-[#6366F1]/30"
-                  : "border-white/10 text-[#94A3B8] hover:border-[#6366F1]/40 hover:text-white"
+                  ? "bg-[#FACC15] text-white border-[#FACC15] shadow-lg shadow-[#FACC15]/30"
+                  : "border-white/10 text-[#94A3B8] hover:border-[#FACC15]/40 hover:text-white"
               }`}
             >
               {cat}
@@ -66,7 +66,7 @@ export default function Projects() {
         className="text-xs text-[#94A3B8] font-mono mb-6"
       >
         Showing {filtered.length} project{filtered.length !== 1 ? "s" : ""} in{" "}
-        <span className="text-[#A5B4FC]">{active}</span>
+        <span className="text-[#FEF08A]">{active}</span>
       </motion.p>
 
       {/* Project grid */}
