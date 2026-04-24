@@ -14,9 +14,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="font-mono text-base font-bold">
-              <span className="text-[#6366F1]">&lt;</span>
-              <span className="gradient-text">Ameer.dev</span>
-              <span className="text-[#6366F1]">/&gt;</span>
+              
+              <span className="gradient-text">Ameer</span>
+              
             </Link>
             <p className="text-[#94A3B8] text-xs mt-1.5">
               AI Engineer · RAG Systems · LLM Integration
