@@ -122,7 +122,7 @@ export default function Home() {
             variants={itemVariants}
             className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight"
           >
-            Ameer
+            Ameer Sultan
           </motion.h1>
 
           {/* Animated role */}

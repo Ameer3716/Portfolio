@@ -36,9 +36,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="font-mono text-base font-bold tracking-tight group">
-          <span className="text-[#6366F1]">&lt;</span>
-          <span className="gradient-text-animate">Ameer.dev</span>
-          <span className="text-[#6366F1]">/&gt;</span>
+          
+          <span className="gradient-text-animate">Ameer</span>
+          
         </Link>
 
         {/* Desktop links */}
