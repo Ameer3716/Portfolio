@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { FiArrowRight, FiGithub } from "react-icons/fi";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { FiArrowRight, FiGithub, FiMail, FiDownload } from "react-icons/fi";
 import SkillsSection from "../components/SkillsSection";
 import ProjectCard from "../components/ProjectCard";
 import projects from "../data/projects";
@@ -14,116 +14,272 @@ const ROLES = [
   "Automation Specialist",
 ];
 
-export default function Home() {
-  const [roleIdx, setRoleIdx] = useState(0);
+const STATS = [
+  { value: "6+", label: "AI Projects Shipped", icon: "🚀" },
+  { value: "95%", label: "Process Acceleration", icon: "⚡" },
+  { value: "15K+", label: "Training Samples", icon: "🧠" },
+  { value: "$0", label: "Cloud Inference Cost", icon: "💎" },
+];
+
+function Counter({ target }) {
+  const [count, setCount] = useState(0);
+  const numTarget = parseFloat(target.replace(/[^0-9.]/g, ""));
+  const suffix = target.replace(/[0-9.]/g, "");
 
   useEffect(() => {
-    const t = setInterval(() => setRoleIdx((i) => (i + 1) % ROLES.length), 2500);
+    let start = 0;
+    const duration = 1500;
+    const step = numTarget / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= numTarget) { setCount(numTarget); clearInterval(timer); }
+      else setCount(Math.floor(start));
+    }, 16);
+    return () => clearInterval(timer);
+  }, [numTarget]);
+
+  return <span>{suffix === "$" ? `$${count}` : `${count}${suffix}`}</span>;
+}
+
+export default function Home() {
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [statsVisible, setStatsVisible] = useState(false);
+  const statsRef = useRef(null);
+  const heroRef = useRef(null);
+
+  const { scrollY } = useScroll();
+  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0.3]);
+  const heroY = useTransform(scrollY, [0, 400], [0, 60]);
+
+  useEffect(() => {
+    const t = setInterval(() => setRoleIdx((i) => (i + 1) % ROLES.length), 2800);
     return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setStatsVisible(true); }, { threshold: 0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
   const featured = projects.filter((p) => p.featured);
 
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12 } },
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] } },
+  };
+
   return (
     <div className="min-h-screen">
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-10 max-w-6xl mx-auto relative">
-        {/* BG glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* ── HERO ────────────────────────────────────────────────── */}
+      <section
+        ref={heroRef}
+        className="min-h-screen flex flex-col justify-center px-6 pt-28 pb-16 max-w-6xl mx-auto relative overflow-hidden"
+      >
+        {/* Floating orbs */}
+        <motion.div style={{ opacity: heroOpacity, y: heroY }}>
+          <div
+            className="orb"
+            style={{
+              width: 600, height: 600,
+              background: "radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 70%)",
+              top: "10%", left: "50%", transform: "translateX(-50%)",
+            }}
+          />
+          <div
+            className="orb"
+            style={{
+              width: 300, height: 300,
+              background: "radial-gradient(circle, rgba(129,140,248,0.1) 0%, transparent 70%)",
+              bottom: "20%", right: "10%",
+              animationDelay: "3s",
+            }}
+          />
+        </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-          <p className="text-sm font-mono text-primary mb-3 tracking-widest">
-            &gt; Available for Remote Work
-          </p>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10"
+        >
+          {/* Availability badge */}
+          <motion.div variants={itemVariants} className="mb-6">
+            <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1E293B]/80 border border-[#6366F1]/20 text-sm text-[#A5B4FC]">
+              <span className="available-dot" />
+              <span className="font-mono text-xs tracking-wider">Available for Remote Work</span>
+            </span>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
-            Ameer Sultan
-          </h1>
+          {/* Name */}
+          <motion.h1
+            variants={itemVariants}
+            className="font-display text-6xl md:text-8xl font-extrabold text-white leading-none mb-4 tracking-tight"
+          >
+            Ameer{" "}
+            <span className="gradient-text-animate">Sultan</span>
+          </motion.h1>
 
-          <div className="h-14 mb-6">
-            <motion.p
-              key={roleIdx}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="text-2xl md:text-3xl font-bold gradient-text"
-            >
-              {ROLES[roleIdx]}
-            </motion.p>
-          </div>
+          {/* Animated role */}
+          <motion.div variants={itemVariants} className="h-12 md:h-14 mb-8 flex items-center">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={roleIdx}
+                initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -16, filter: "blur(6px)" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="text-2xl md:text-3xl font-semibold gradient-text font-display"
+              >
+                {ROLES[roleIdx]}
+              </motion.p>
+            </AnimatePresence>
+            <span className="typing-cursor ml-1" />
+          </motion.div>
 
-          <p className="text-muted text-lg max-w-2xl mb-10 leading-relaxed">
-            I engineer production-grade AI systems — RAG pipelines, NLP automation, and LLM-powered tools.
-            <br />
-            <span className="text-white font-medium">6 deployed projects</span> ·{" "}
-            <span className="text-white font-medium">95% workflow acceleration</span> ·{" "}
+          {/* Description */}
+          <motion.p variants={itemVariants} className="text-[#94A3B8] text-lg max-w-2xl mb-10 leading-relaxed">
+            I engineer production-grade AI systems — RAG pipelines, NLP automation, and LLM-powered tools.{" "}
+            <span className="text-white font-medium">6 deployed projects</span>
+            {" · "}
+            <span className="text-white font-medium">95% workflow acceleration</span>
+            {" · "}
             <span className="text-white font-medium">zero-cost inference architectures</span>
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to="/projects"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary/80 transition-colors"
-            >
+          {/* CTA buttons */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
+            <Link to="/projects" className="btn-primary">
               View Projects <FiArrowRight />
             </Link>
             <a
-              href="https://github.com/yourgithub"
+              href="https://github.com/Ameer3716"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-muted font-semibold text-sm hover:text-white hover:border-white/30 transition-colors"
+              className="btn-outline"
             >
               <FiGithub /> GitHub
             </a>
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-primary/30 text-primary font-semibold text-sm hover:bg-primary/10 transition-colors"
-            >
-              Hire Me
+            <Link to="/contact" className="btn-outline">
+              <FiMail /> Hire Me
             </Link>
-          </div>
+            <a href="/AI_Developer_CV.pdf" download className="btn-outline">
+              <FiDownload /> CV
+            </a>
+          </motion.div>
         </motion.div>
 
-        {/* Stats */}
+        {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          {[
-            { value: "6+", label: "AI Projects Shipped" },
-            { value: "95%", label: "Process Acceleration" },
-            { value: "15K+", label: "Training Samples" },
-            { value: "0$", label: "Cloud Inference Cost" },
-          ].map((stat) => (
-            <div key={stat.label} className="bg-surface/60 rounded-xl border border-white/5 p-4 text-center">
-              <p className="text-2xl font-bold gradient-text">{stat.value}</p>
-              <p className="text-xs text-muted mt-1">{stat.label}</p>
-            </div>
-          ))}
+          <span className="text-[#94A3B8] text-xs font-mono tracking-widest">SCROLL</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-0.5 h-8 rounded-full bg-gradient-to-b from-[#6366F1] to-transparent"
+          />
         </motion.div>
       </section>
 
-      {/* ── SKILLS ───────────────────────────────────────────────────────── */}
+      {/* ── STATS ───────────────────────────────────────────────── */}
+      <section ref={statsRef} className="py-6 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {STATS.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="stat-card"
+            >
+              <div className="text-2xl mb-2">{stat.icon}</div>
+              <p className="text-3xl font-extrabold gradient-text font-display mb-1">
+                {statsVisible ? <Counter target={stat.value} /> : stat.value}
+              </p>
+              <p className="text-xs text-[#94A3B8] leading-snug">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SKILLS ──────────────────────────────────────────────── */}
       <SkillsSection />
 
-      {/* ── FEATURED PROJECTS ────────────────────────────────────────────── */}
-      <section className="py-10 px-6 max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+      {/* ── FEATURED PROJECTS ───────────────────────────────────── */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-end justify-between mb-10"
+        >
           <div>
-            <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
+            <p className="section-label">Selected work</p>
+            <h2 className="font-display text-4xl font-extrabold text-white">Featured Projects</h2>
             <div className="section-divider" />
           </div>
-          <Link to="/projects" className="text-sm text-primary hover:underline flex items-center gap-1">
-            View All <FiArrowRight size={14} />
+          <Link
+            to="/projects"
+            className="hidden md:flex items-center gap-2 text-sm text-[#A5B4FC] hover:text-white transition-colors group"
+          >
+            View all 20+
+            <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
           </Link>
-        </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featured.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-10 text-center md:hidden"
+        >
+          <Link to="/projects" className="btn-outline">
+            View all projects <FiArrowRight />
+          </Link>
+        </motion.div>
+      </section>
+
+      {/* ── CTA STRIP ───────────────────────────────────────────── */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative rounded-3xl overflow-hidden border border-[#6366F1]/20 p-10 md:p-16 text-center"
+          style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, rgba(15,23,42,0.8) 60%)" }}
+        >
+          <div className="orb" style={{ width: 400, height: 400, background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
+          <p className="section-label justify-center">Open to opportunities</p>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-white mb-4">Let's Build Something Together</h2>
+          <p className="text-[#94A3B8] max-w-lg mx-auto mb-8">
+            Looking for AI developer roles, internships, and freelance collaborations. I respond within 24 hours.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link to="/contact" className="btn-primary">
+              Get In Touch <FiArrowRight />
+            </Link>
+            <a href="mailto:ameersultan0310@gmail.com" className="btn-outline">
+              <FiMail /> ameersultan0310@gmail.com
+            </a>
+          </div>
+        </motion.div>
       </section>
     </div>
   );

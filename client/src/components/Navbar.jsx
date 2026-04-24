@@ -15,64 +15,80 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", fn);
+    const fn = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  useEffect(() => setOpen(false), [pathname]);
+
   return (
     <motion.nav
-      initial={{ y: -60, opacity: 0 }}
+      initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-dark/90 backdrop-blur-md shadow-lg shadow-primary/10" : "bg-transparent"
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-[#0F172A]/85 backdrop-blur-xl border-b border-white/5 shadow-xl shadow-black/20"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="font-mono text-lg font-semibold">
-          <span className="text-primary">&lt;</span>
-          <span className="gradient-text">Ameer.dev</span>
-          <span className="text-primary">/&gt;</span>
+        <Link to="/" className="font-mono text-base font-bold tracking-tight group">
+          <span className="text-[#6366F1]">&lt;</span>
+          <span className="gradient-text-animate">Ameer.dev</span>
+          <span className="text-[#6366F1]">/&gt;</span>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === l.to ? "text-primary" : "text-muted"
+              className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                pathname === l.to ? "text-white" : "text-[#94A3B8] hover:text-white"
               }`}
             >
-              {l.label}
               {pathname === l.to && (
-                <motion.div
-                  layoutId="underline"
-                  className="h-0.5 mt-0.5 bg-primary rounded"
+                <motion.span
+                  layoutId="nav-pill"
+                  className="absolute inset-0 rounded-lg bg-[#6366F1]/15 border border-[#6366F1]/25"
+                  transition={{ type: "spring", stiffness: 400, damping: 35 }}
                 />
               )}
+              <span className="relative z-10">{l.label}</span>
             </Link>
           ))}
+
           <a
             href="/AI_Developer_CV.pdf"
             download
-            className="text-sm font-semibold px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all"
+            className="ml-3 btn-primary text-sm !py-2 !px-5"
           >
             Download CV
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-muted hover:text-white"
+          className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5"
+          aria-label="Toggle menu"
         >
-          <div className="w-6 h-0.5 bg-current mb-1.5 transition-all" />
-          <div className="w-6 h-0.5 bg-current mb-1.5" />
-          <div className="w-6 h-0.5 bg-current" />
+          <motion.span
+            animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+            className="block w-6 h-0.5 bg-[#E2E8F0] rounded"
+          />
+          <motion.span
+            animate={open ? { opacity: 0 } : { opacity: 1 }}
+            className="block w-6 h-0.5 bg-[#E2E8F0] rounded"
+          />
+          <motion.span
+            animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+            className="block w-6 h-0.5 bg-[#E2E8F0] rounded"
+          />
         </button>
       </div>
 
@@ -83,18 +99,35 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-surface border-t border-white/5 px-6 py-4 flex flex-col gap-4"
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden bg-[#1E293B]/95 backdrop-blur-xl border-t border-white/5 overflow-hidden"
           >
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className={`text-sm font-medium ${pathname === l.to ? "text-primary" : "text-muted"}`}
+            <div className="px-6 py-5 flex flex-col gap-3">
+              {links.map((l, i) => (
+                <motion.div
+                  key={l.to}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.06 }}
+                >
+                  <Link
+                    to={l.to}
+                    className={`block py-2 text-sm font-medium ${
+                      pathname === l.to ? "text-[#A5B4FC]" : "text-[#94A3B8]"
+                    }`}
+                  >
+                    {l.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <a
+                href="/AI_Developer_CV.pdf"
+                download
+                className="mt-2 btn-primary text-sm !py-2.5 justify-center"
               >
-                {l.label}
-              </Link>
-            ))}
+                Download CV
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
