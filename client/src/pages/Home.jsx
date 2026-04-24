@@ -145,7 +145,12 @@ export default function Home() {
 
           {/* Description */}
           <motion.p variants={itemVariants} className="text-[#94A3B8] text-lg max-w-2xl mb-10 leading-relaxed">
-            I am passionate about turning complex problems into intelligent, scalable solutions — whether that means fine-tuning language models, architecting cloud-native pipelines, or shipping full-stack applications from backend to mobile. I thrive at the intersection of AI research and real-world engineering, where ideas meet production.
+            I engineer production-grade AI systems — RAG pipelines, NLP automation, and LLM-powered tools.{" "}
+            <span className="text-white font-medium">6 deployed projects</span>
+            {" · "}
+            <span className="text-white font-medium">95% workflow acceleration</span>
+            {" · "}
+            <span className="text-white font-medium">zero-cost inference architectures</span>
           </motion.p>
 
           {/* CTA buttons */}
