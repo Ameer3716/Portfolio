@@ -1,3 +1,6 @@
+import React from "react";
+import { FiMessageSquare, FiHeart, FiMic, FiLayout, FiBriefcase, FiTerminal, FiCloud, FiFileText, FiActivity, FiHexagon, FiPhoneCall, FiVideo, FiCpu, FiShield, FiCode, FiAlignLeft, FiCoffee, FiHeadphones, FiCheckSquare, FiBarChart2 } from "react-icons/fi";
+
 const projects = [
   {
     id: 1,
@@ -10,7 +13,7 @@ const projects = [
     github: "https://github.com/Ameer3716/instagram-ai-chatbot",
     live: "#",
     featured: true,
-    icon: "💬",
+    icon: <FiMessageSquare />,
   },
   {
     id: 2,
@@ -23,7 +26,7 @@ const projects = [
     github: "https://github.com/Ameer3716/soulnest",
     live: "#",
     featured: true,
-    icon: "🕊️",
+    icon: <FiHeart />,
   },
   {
     id: 3,
@@ -36,7 +39,7 @@ const projects = [
     github: "https://github.com/Ameer3716/universal-viseme-system",
     live: "#",
     featured: true,
-    icon: "🗣️",
+    icon: <FiMic />,
   },
   {
     id: 4,
@@ -49,7 +52,7 @@ const projects = [
     github: "https://github.com/Ameer3716/agriconnect",
     live: "#",
     featured: true,
-    icon: "🌾",
+    icon: <FiLayout />,
   },
   {
     id: 5,
@@ -62,7 +65,7 @@ const projects = [
     github: "https://github.com/Ameer3716/agents-boardroom",
     live: "#",
     featured: true,
-    icon: "🏢",
+    icon: <FiBriefcase />,
   },
   // ── MORE RECENT PROJECTS ──────────────────────────────────────────────────
   {
@@ -76,7 +79,7 @@ const projects = [
     github: "https://github.com/Ameer3716/snake-k8s",
     live: "#",
     featured: false,
-    icon: "🐍",
+    icon: <FiTerminal />,
   },
   {
     id: 7,
@@ -89,7 +92,7 @@ const projects = [
     github: "https://github.com/Ameer3716/aws-terraform-iac",
     live: "#",
     featured: false,
-    icon: "☁️",
+    icon: <FiCloud />,
   },
   {
     id: 8,
@@ -102,7 +105,7 @@ const projects = [
     github: "https://github.com/Ameer3716/ai-doc-summarizer",
     live: "#",
     featured: false,
-    icon: "📄",
+    icon: <FiFileText />,
   },
   {
     id: 9,
@@ -115,7 +118,7 @@ const projects = [
     github: "https://github.com/Ameer3716/healthcare-platform",
     live: "#",
     featured: false,
-    icon: "🏥",
+    icon: <FiActivity />,
   },
   {
     id: 10,
@@ -128,7 +131,7 @@ const projects = [
     github: "https://github.com/Ameer3716/nexus-protocol",
     live: "#",
     featured: false,
-    icon: "⛓️",
+    icon: <FiHexagon />,
   },
   {
     id: 11,
@@ -141,7 +144,7 @@ const projects = [
     github: "https://github.com/Ameer3716/ai-voice-saas",
     live: "#",
     featured: false,
-    icon: "🎙️",
+    icon: <FiPhoneCall />,
   },
   {
     id: 12,
@@ -154,7 +157,7 @@ const projects = [
     github: "https://github.com/Ameer3716/ai-exercise-coach",
     live: "#",
     featured: false,
-    icon: "🏋️",
+    icon: <FiVideo />,
   },
   // ── PREVIOUS PROJECTS ────────────────────────────────────────────────────
   {
@@ -168,7 +171,7 @@ const projects = [
     github: "https://github.com/Ameer3716/medical-ai-rag",
     live: "#",
     featured: false,
-    icon: "🩺",
+    icon: <FiCpu />,
   },
   {
     id: 14,
@@ -181,7 +184,7 @@ const projects = [
     github: "https://github.com/Ameer3716/legal-ai-analyzer",
     live: "#",
     featured: false,
-    icon: "⚖",
+    icon: <FiShield />,
   },
   {
     id: 15,
@@ -194,7 +197,7 @@ const projects = [
     github: "https://github.com/Ameer3716/docubot",
     live: "#",
     featured: false,
-    icon: "📄",
+    icon: <FiFileText />,
   },
   {
     id: 16,
@@ -207,7 +210,7 @@ const projects = [
     github: "https://github.com/Ameer3716/t5-summarizer",
     live: "#",
     featured: false,
-    icon: "📱",
+    icon: <FiAlignLeft />,
   },
   {
     id: 17,
@@ -220,7 +223,7 @@ const projects = [
     github: "https://github.com/Ameer3716/gpt2-recipe-generator",
     live: "#",
     featured: false,
-    icon: "🥘",
+    icon: <FiCoffee />,
   },
   {
     id: 18,
@@ -233,7 +236,7 @@ const projects = [
     github: "https://github.com/Ameer3716/pdf-audiobook",
     live: "#",
     featured: false,
-    icon: "🎧",
+    icon: <FiHeadphones />,
   },
   // ── BONUS PROJECTS (Planned / In Progress) ─────────────────────────────
   {
@@ -247,7 +250,7 @@ const projects = [
     github: "#",
     live: "#",
     featured: false,
-    icon: "💻",
+    icon: <FiCpu />,
     badge: "Coming Soon",
   },
   {
@@ -261,7 +264,7 @@ const projects = [
     github: "#",
     live: "#",
     featured: false,
-    icon: "🔎",
+    icon: <FiCheckSquare />,
     badge: "Coming Soon",
   },
   {
@@ -275,7 +278,7 @@ const projects = [
     github: "#",
     live: "#",
     featured: false,
-    icon: "📈",
+    icon: <FiBarChart2 />,
     badge: "Coming Soon",
   }
 ];

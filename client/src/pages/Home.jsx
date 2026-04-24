@@ -15,10 +15,10 @@ const ROLES = [
 ];
 
 const STATS = [
-  { value: "6+", label: "AI Projects Shipped", icon: <FiTerminal /> },
-  { value: "95%", label: "Process Acceleration", icon: <FiZap /> },
-  { value: "15K+", label: "Training Samples", icon: <FiDatabase /> },
-  { value: "$0", label: "Cloud Inference Cost", icon: <FiCloud /> },
+  { value: "20+", label: "Total Projects Shipped", icon: <FiTerminal /> },
+  { value: "95%", label: "Task Time Saved via AI", icon: <FiZap /> },
+  { value: "15K+", label: "Dataset Samples Trained", icon: <FiDatabase /> },
+  { value: "60+", label: "Cloud Resources Provisioned", icon: <FiCloud /> },
 ];
 
 function Counter({ target }) {
@@ -120,11 +120,9 @@ export default function Home() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-4xl md:text-7xl font-semibold text-white leading-none mb-4 tracking-tight"
+            className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight"
           >
-            <span className="text-[#6366F1]">{"<"}</span>
-            Ameer.dev{" "}
-            <span className="text-[#6366F1]">{" />"}</span>
+            Ameer
           </motion.h1>
 
           {/* Animated role */}
