@@ -64,9 +64,101 @@ const projects = [
     featured: true,
     icon: "🏢",
   },
-  // ── PREVIOUS PROJECTS ────────────────────────────────────────────────────
+  // ── MORE RECENT PROJECTS ──────────────────────────────────────────────────
   {
     id: 6,
+    title: "Snake Game — Containerized Full-Stack App",
+    description:
+      "A classic Snake arcade game rebuilt as a production-grade containerized application demonstrating DevOps fundamentals. Orchestrated with Kubernetes across 3 replicas with CPU-based Auto Scaling.",
+    impact: "Kubernetes · Docker · HPA auto-scaling",
+    stack: ["Node.js", "Express", "MongoDB", "Docker", "Kubernetes", "Nginx"],
+    category: "DevOps",
+    github: "https://github.com/Ameer3716/snake-k8s",
+    live: "#",
+    featured: false,
+    icon: "🐍",
+  },
+  {
+    id: 7,
+    title: "AWS Cloud Infrastructure as Code",
+    description:
+      "A complete production-grade AWS infrastructure deployed entirely through Infrastructure as Code using Terraform. Provisions a multi-tier network, ALB, Auto Scaling, and S3 remote state with DynamoDB locking.",
+    impact: "60+ resources provisioned · Zero manual clicks",
+    stack: ["Terraform", "Packer", "AWS", "Bash"],
+    category: "Cloud",
+    github: "https://github.com/Ameer3716/aws-terraform-iac",
+    live: "#",
+    featured: false,
+    icon: "☁️",
+  },
+  {
+    id: 8,
+    title: "AI Document Summarizer & Keyword Extractor",
+    description:
+      "A full-stack document intelligence platform that extracts text from PDFs, Word docs, and web URLs, applying YAKE for unsupervised keyword extraction. Features SHA-256 duplicate detection and document versioning.",
+    impact: "Multi-source extraction · YAKE algorithm · SHA-256 hashing",
+    stack: ["Django", "React", "Python", "SQLite"],
+    category: "Full Stack",
+    github: "https://github.com/Ameer3716/ai-doc-summarizer",
+    live: "#",
+    featured: false,
+    icon: "📄",
+  },
+  {
+    id: 9,
+    title: "Healthcare Platform — Multi-Role Medical System",
+    description:
+      "A comprehensive telemedicine platform supporting 4 distinct user roles: Patients, Doctors, Admins, and Nutritionists. Features an AI-powered medical consultation interface and appointment booking.",
+    impact: "4 distinct user roles · AI medical assistant · Credit billing",
+    stack: ["React", "Django", "Node.js"],
+    category: "Healthtech",
+    github: "https://github.com/Ameer3716/healthcare-platform",
+    live: "#",
+    featured: false,
+    icon: "🏥",
+  },
+  {
+    id: 10,
+    title: "NEXUS Protocol — DeFi Ecosystem",
+    description:
+      "A full DeFi ecosystem on Polygon consisting of 3 Solidity smart contracts: an ERC20 token, a multi-step presale, and a token burn system. Integrates a React frontend with WalletConnect and i18n support.",
+    impact: "3 Smart Contracts · Polygon Mainnet · Web3 Integration",
+    stack: ["Solidity", "Hardhat", "Polygon", "React", "Ethers.js"],
+    category: "Web3",
+    github: "https://github.com/Ameer3716/nexus-protocol",
+    live: "#",
+    featured: false,
+    icon: "⛓️",
+  },
+  {
+    id: 11,
+    title: "AI Voice Agent Platform — White-Label SaaS",
+    description:
+      "A white-label SaaS platform for managing AI voice agents with GoHighLevel CRM integration, real-time call logging via Socket.io, and Stripe subscriptions. Features a dual Node.js and FastAPI backend architecture.",
+    impact: "Dual Backend (Node+FastAPI) · GoHighLevel CRM · SaaS",
+    stack: ["Node.js", "FastAPI", "PostgreSQL", "Stripe", "Socket.io"],
+    category: "SaaS",
+    github: "https://github.com/Ameer3716/ai-voice-saas",
+    live: "#",
+    featured: false,
+    icon: "🎙️",
+  },
+  {
+    id: 12,
+    title: "AI Exercise Coach — Real-Time Pose Detection",
+    description:
+      "A real-time AI personal trainer that uses MediaPipe's pose detection to count exercise reps with form feedback. Delivers voice coaching via ElevenLabs TTS with word-level lip-synced avatar animations.",
+    impact: "MediaPipe Pose Detection · OpenAI Coaching · ElevenLabs TTS",
+    stack: ["TypeScript", "React", "MediaPipe", "OpenAI", "ElevenLabs"],
+    category: "AI",
+    github: "https://github.com/Ameer3716/ai-exercise-coach",
+    live: "#",
+    featured: false,
+    icon: "🏋️",
+  },
+  // ── PREVIOUS PROJECTS ────────────────────────────────────────────────────
+  {
+    id: 13,
     title: "Medical AI Assistant (RAG)",
     description:
       "Production RAG system that indexes 4,000+ medical transcriptions and delivers sub-second contextual answers using FAISS vector retrieval and LangChain orchestration — zero API cost, fully on-device.",
@@ -79,7 +171,7 @@ const projects = [
     icon: "🩺",
   },
   {
-    id: 7,
+    id: 14,
     title: "AI Legal Contract Analyzer",
     description:
       "Automated contract review system trained on 510 real contracts. Enforces 15 compliance rules, generates explainable verdicts, and slashes review time from 3 hours to 5 minutes.",
@@ -92,7 +184,7 @@ const projects = [
     icon: "⚖",
   },
   {
-    id: 8,
+    id: 15,
     title: "DocuBot — Code Documentation Generator",
     description:
       "NLP pipeline that parses raw source code and auto-generates consistent docstrings. Uses BPE subword tokenization, Word2Vec semantics, and a Seq2Seq+Attention decoder. Evaluated with BLEU & Perplexity.",
@@ -105,7 +197,7 @@ const projects = [
     icon: "📄",
   },
   {
-    id: 9,
+    id: 16,
     title: "Text Summarization System (T5)",
     description:
       "Fine-tuned T5-Base on 5,000+ news articles from CNN/DailyMail. Deployed on HuggingFace Hub + Streamlit Cloud with user controls for summary length, beam search width, and creativity.",
@@ -118,7 +210,7 @@ const projects = [
     icon: "📱",
   },
   {
-    id: 10,
+    id: 17,
     title: "AI Recipe Generator (GPT-2)",
     description:
       "GPT-2 fine-tuned on 10,000+ curated recipes. Generates step-by-step cooking instructions from a title + ingredient list using top-p sampling and repetition penalty for coherent, creative output.",
@@ -131,7 +223,7 @@ const projects = [
     icon: "🥘",
   },
   {
-    id: 11,
+    id: 18,
     title: "PDF → Audiobook Converter",
     description:
       "Lightweight Python app that converts any PDF into a structured MP3 audiobook. Auto-detects chapters, supports 4 TTS engines (Edge TTS, gTTS, pyttsx3, Coqui XTTS v2), and merges audio with loudness normalization.",
@@ -145,7 +237,7 @@ const projects = [
   },
   // ── BONUS PROJECTS (Planned / In Progress) ─────────────────────────────
   {
-    id: 12,
+    id: 19,
     title: "Multi-Agent Research Assistant",
     description:
       "Autonomous AI agent pipeline using LangGraph that decomposes complex research questions into subtasks, delegates to specialist sub-agents (web search, summarizer, fact-checker), and synthesizes a structured report.",
@@ -159,7 +251,7 @@ const projects = [
     badge: "Coming Soon",
   },
   {
-    id: 13,
+    id: 20,
     title: "AI-Powered Code Review Bot",
     description:
       "GitHub integration that triggers on every PR, runs static analysis + LLM review, and posts structured comments with severity levels, fix suggestions, and compliance checks — fully automated CI/CD plugin.",
@@ -173,7 +265,7 @@ const projects = [
     badge: "Coming Soon",
   },
   {
-    id: 14,
+    id: 21,
     title: "Agentic Data Analyst",
     description:
       "Upload any CSV and ask natural-language questions. A ReAct agent generates, executes, and self-corrects Pandas code in a sandboxed environment, returning charts and insights with zero manual scripting.",
