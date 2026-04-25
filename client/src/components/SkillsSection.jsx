@@ -132,7 +132,7 @@ export default function SkillsSection() {
           ].map((skill, i) => (
             <div key={skill.name}>
               <div className="flex justify-between mb-1.5">
-                <span className="text-sm text-[#94A3B8]">{skill.name}</span>
+                <span className="text-sm text-white">{skill.name}</span>
                 <span className="text-xs text-[#FEF08A] font-mono">{skill.level}%</span>
               </div>
               <div className="h-1.5 bg-[#000000] rounded-full overflow-hidden">

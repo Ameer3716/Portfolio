@@ -18,7 +18,7 @@ export default function Projects() {
           All <span className="gradient-text">Projects</span>
         </h1>
         <div className="section-divider" />
-        <p className="text-[#94A3B8] mb-10 max-w-2xl">
+        <p className="text-white mb-10 max-w-2xl">
           End-to-end systems built for real-world impact — from zero-cost RAG pipelines to autonomous AI agents.
           <span className="text-[#FEF08A] ml-2 font-mono text-sm">{projects.length} total</span>
         </p>
@@ -42,13 +42,13 @@ export default function Projects() {
               className={`relative text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 flex items-center gap-1.5 ${
                 active === cat
                   ? "bg-[#FACC15] text-white border-[#FACC15] shadow-lg shadow-[#FACC15]/30"
-                  : "border-white/10 text-[#94A3B8] hover:border-[#FACC15]/40 hover:text-white"
+                  : "border-white/10 text-white hover:border-[#FACC15]/40 hover:text-white"
               }`}
             >
               {cat}
               <span
                 className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                  active === cat ? "bg-white/20 text-white" : "bg-white/5 text-[#94A3B8]"
+                  active === cat ? "bg-white/20 text-white" : "bg-white/5 text-white"
                 }`}
               >
                 {count}
@@ -63,7 +63,7 @@ export default function Projects() {
         key={active}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-xs text-[#94A3B8] font-mono mb-6"
+        className="text-xs text-white font-mono mb-6"
       >
         Showing {filtered.length} project{filtered.length !== 1 ? "s" : ""} in{" "}
         <span className="text-[#FEF08A]">{active}</span>

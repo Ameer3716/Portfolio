@@ -12,7 +12,7 @@
   --dark: #000000;
   --surface: #050505;
   --surface2: #0A0A0A;
-  --text: #E2E8F0;
+  --text: #FFFFFF;
   --muted: #94A3B8;
   --border: rgba(250, 204, 21,0.15);
 }
@@ -23,7 +23,7 @@ body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
   background: #000000;
-  color: #E2E8F0;
+  color: #FFFFFF;
   overflow-x: hidden;
   cursor: none;
 }

@@ -20,7 +20,7 @@ function FloatingInput({ label, type = "text", value, onChange, placeholder, req
         className={`absolute left-4 transition-all duration-200 pointer-events-none z-10 ${
           active
             ? "top-2 text-[10px] text-[#FEF08A] font-mono tracking-wider"
-            : "top-1/2 -translate-y-1/2 text-sm text-[#94A3B8]"
+            : "top-1/2 -translate-y-1/2 text-sm text-white"
         }`}
       >
         {label}
@@ -83,7 +83,7 @@ export default function Contact() {
             Get In <span className="gradient-text-animate">Touch</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-[#94A3B8] max-w-lg mt-2">
+          <p className="text-white max-w-lg mt-2">
             Open to AI Developer roles, internships, and collaborations. I respond within 24 hours.
           </p>
         </motion.div>
@@ -114,7 +114,7 @@ export default function Contact() {
                   className={`absolute left-4 transition-all duration-200 pointer-events-none z-10 ${
                     form.message
                       ? "top-2 text-[10px] text-[#FEF08A] font-mono tracking-wider"
-                      : "top-4 text-sm text-[#94A3B8]"
+                      : "top-4 text-sm text-white"
                   }`}
                 >
                   Message
@@ -171,7 +171,7 @@ export default function Contact() {
                 <span className="available-dot" />
                 <span className="font-semibold text-white text-sm">Currently Available</span>
               </div>
-              <p className="text-[#94A3B8] text-sm leading-relaxed">
+              <p className="text-white text-sm leading-relaxed">
                 Open to full-time AI developer roles, internships, and freelance projects. Remote-friendly and ready to start immediately.
               </p>
             </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                     href={s.href}
                     target={s.href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
-                    className="flex items-center gap-3 py-2.5 px-3.5 rounded-xl bg-[#000000]/60 border border-white/5 text-[#94A3B8] hover:text-[#FEF08A] hover:border-[#FACC15]/30 transition-all duration-200 group"
+                    className="flex items-center gap-3 py-2.5 px-3.5 rounded-xl bg-[#000000]/60 border border-white/5 text-white hover:text-[#FEF08A] hover:border-[#FACC15]/30 transition-all duration-200 group"
                   >
                     <span className="text-[#FACC15]">{s.icon}</span>
                     <div className="flex-1 min-w-0">
@@ -204,7 +204,7 @@ export default function Contact() {
               <h3 className="font-semibold text-white mb-3 text-sm">What to expect</h3>
               <ul className="space-y-2.5">
                 {["Response within 24 hours", "Open to async communication", "Can start immediately", "Remote-first preferred"].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-[#94A3B8]">
+                  <li key={item} className="flex items-center gap-2 text-sm text-white">
                     <span className="text-[#FACC15] text-xs">▸</span>
                     {item}
                   </li>

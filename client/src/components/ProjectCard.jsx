@@ -27,13 +27,13 @@ export default function ProjectCard({ project, index }) {
     "Backend": "#FDE047",
     "Frontend": "#FEF08A",
     "Full Stack": "#FACC15",
-    "Mobile App": "#8B5CF6",
-    "DevOps": "#06B6D4",
-    "Cloud": "#0EA5E9",
-    "Web3": "#F59E0B",
-    "Healthtech": "#10B981",
+    "Mobile App": "#EAB308",
+    "DevOps": "#FACC15",
+    "Cloud": "#FDE047",
+    "Web3": "#FACC15",
+    "Healthtech": "#FEF08A",
     "SaaS": "#FACC15",
-    "NLP / Fine-tuning": "#A855F7",
+    "NLP / Fine-tuning": "#EAB308",
     "Web App": "#FACC15",
     "Desktop App": "#FACC15",
     "Scripts": "#FACC15",
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, index }) {
       className="relative group"
     >
       <div
-        className="relative bg-[#111111]/70 backdrop-blur-sm rounded-2xl border border-white/5 p-6 flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 group-hover:border-[#FACC15]/30"
+        className="relative bg-[#0A0A0A]/70 backdrop-blur-sm rounded-2xl border border-white/5 p-6 flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 group-hover:border-[#FACC15]/30"
         style={{ transform: "translateZ(0)" }}
       >
         {/* Dynamic glow on hover */}
@@ -104,7 +104,7 @@ export default function ProjectCard({ project, index }) {
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-[#94A3B8] leading-relaxed flex-1 relative z-10">
+        <p className="text-sm text-white leading-relaxed flex-1 relative z-10">
           {project.description}
         </p>
 
@@ -133,7 +133,7 @@ export default function ProjectCard({ project, index }) {
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 text-xs text-[#94A3B8] hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors"
           >
             <FiGithub size={13} /> GitHub
           </a>
@@ -142,7 +142,7 @@ export default function ProjectCard({ project, index }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-xs text-[#94A3B8] hover:text-[#FEF08A] transition-colors"
+              className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors"
             >
               <FiExternalLink size={13} /> Live Demo
             </a>

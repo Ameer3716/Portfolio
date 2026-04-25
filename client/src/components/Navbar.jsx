@@ -48,7 +48,7 @@ export default function Navbar() {
               key={l.to}
               to={l.to}
               className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                pathname === l.to ? "text-white" : "text-[#94A3B8] hover:text-white"
+                pathname === l.to ? "text-white" : "text-white hover:text-[#FACC15]"
               }`}
             >
               {pathname === l.to && (
@@ -113,7 +113,7 @@ export default function Navbar() {
                   <Link
                     to={l.to}
                     className={`block py-2 text-sm font-medium ${
-                      pathname === l.to ? "text-[#FEF08A]" : "text-[#94A3B8]"
+                      pathname === l.to ? "text-[#FEF08A]" : "text-white"
                     }`}
                   >
                     {l.label}

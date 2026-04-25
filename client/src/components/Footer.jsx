@@ -18,7 +18,7 @@ export default function Footer() {
               <span className="gradient-text">Ameer</span>
               
             </Link>
-            <p className="text-[#94A3B8] text-xs mt-1.5">
+            <p className="text-white text-xs mt-1.5">
               AI Engineer · RAG Systems · LLM Integration
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function Footer() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="text-sm text-[#94A3B8] hover:text-white transition-colors highlight-line"
+                className="text-sm text-white hover:text-[#FACC15] transition-colors highlight-line"
               >
                 {l.label}
               </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href={s.href}
                 target={s.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                className="text-[#94A3B8] hover:text-white transition-colors"
+                className="text-white hover:text-[#FACC15] transition-colors"
               >
                 {s.icon}
               </a>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center justify-between border-t border-white/5 pt-6">
-          <p className="text-[#94A3B8] text-xs">
+          <p className="text-white text-xs">
             Built with{" "}
             <span className="text-[#FACC15]">React</span> +{" "}
             <span className="text-[#FACC15]">Framer Motion</span> +{" "}
@@ -71,7 +71,7 @@ export default function Footer() {
             onClick={scrollTop}
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-9 h-9 rounded-xl bg-[#111111] border border-white/10 flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#FACC15]/30 transition-all"
+            className="w-9 h-9 rounded-xl bg-[#111111] border border-white/10 flex items-center justify-center text-white hover:text-[#FACC15] hover:border-[#FACC15]/30 transition-all"
           >
             <FiArrowUp size={15} />
           </motion.button>

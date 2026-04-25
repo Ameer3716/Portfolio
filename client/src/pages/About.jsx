@@ -50,7 +50,7 @@ export default function About() {
             Ameer <span className="gradient-text-animate">Sultan</span>
           </h1>
           <div className="section-divider" />
-          <p className="text-[#94A3B8] text-lg max-w-xl leading-relaxed mt-2">
+          <p className="text-white text-lg max-w-xl leading-relaxed mt-2">
             Final-year Software Engineering student turned production AI developer. I ship real systems, not demos.
           </p>
         </motion.div>
@@ -62,19 +62,19 @@ export default function About() {
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="text-[#FACC15]">//</span> About Me
               </h3>
-              <p className="text-[#94A3B8] leading-relaxed mb-4">
+              <p className="text-white leading-relaxed mb-4">
                 I'm a final-year Software Engineering student at{" "}
                 <span className="text-white font-medium">FAST-NUCES CFD</span>, specializing in building AI systems
                 that solve real-world problems — not just toy demos.
               </p>
-              <p className="text-[#94A3B8] leading-relaxed mb-4">
+              <p className="text-white leading-relaxed mb-4">
                 My focus is on{" "}
                 <span className="text-[#FEF08A] font-medium">retrieval-augmented generation</span>,{" "}
                 <span className="text-[#FEF08A] font-medium">NLP automation</span>, and{" "}
                 <span className="text-[#FEF08A] font-medium">LLM integration</span> — with a hard constraint on
                 cost-efficiency (most of my systems run on CPU, zero API fees).
               </p>
-              <p className="text-[#94A3B8] leading-relaxed">
+              <p className="text-white leading-relaxed">
                 I believe in shipping things. 6 deployed AI projects, ROUGE/BLEU evaluated models, and systems that
                 reduced human workload by up to 95%.
               </p>
@@ -96,7 +96,7 @@ export default function About() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#000000]/60 border border-white/5 text-[#94A3B8] hover:text-[#FEF08A] hover:border-[#FACC15]/30 transition-all duration-200 group"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#000000]/60 border border-white/5 text-white hover:text-[#FEF08A] hover:border-[#FACC15]/30 transition-all duration-200 group"
                   >
                     <span className="text-[#FACC15] group-hover:scale-110 transition-transform">{link.icon}</span>
                     <span className="text-sm">{link.label}</span>
@@ -119,8 +119,8 @@ export default function About() {
               <div className="relative pl-4 border-l border-[#FACC15]/30">
                 <p className="font-semibold text-white text-sm">BS Software Engineering</p>
                 <p className="text-[#FEF08A] text-sm">FAST-NUCES, CFD Campus</p>
-                <p className="text-xs text-[#94A3B8] mt-1">2022 – 2026 · 8th Semester</p>
-                <p className="text-xs text-[#94A3B8]">Focus: Full Stack, React, Node.js, AI</p>
+                <p className="text-xs text-white mt-1">2022 – 2026 · 8th Semester</p>
+                <p className="text-xs text-white">Focus: Full Stack, React, Node.js, AI</p>
               </div>
             </div>
 
@@ -135,7 +135,7 @@ export default function About() {
                   "Teams building with LLMs & automation",
                   "Internship → Full-time opportunities",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-[#94A3B8]">
+                  <li key={item} className="flex items-start gap-2 text-sm text-white">
                     <span className="text-[#FACC15] mt-0.5 shrink-0">▸</span>
                     {item}
                   </li>
@@ -165,7 +165,7 @@ export default function About() {
                     <span className="font-mono text-[10px] text-[#FACC15] tracking-wider">{item.year}</span>
                     <p className="text-sm font-semibold text-white">{item.title}</p>
                     <p className="text-[11px] text-[#FEF08A]">{item.subtitle}</p>
-                    <p className="text-xs text-[#94A3B8] mt-1 leading-relaxed">{item.desc}</p>
+                    <p className="text-xs text-white mt-1 leading-relaxed">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>

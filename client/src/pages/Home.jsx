@@ -143,7 +143,7 @@ export default function Home() {
           </motion.div>
 
           {/* Description */}
-          <motion.p variants={itemVariants} className="text-[#94A3B8] text-lg max-w-2xl mb-10 leading-relaxed">
+          <motion.p variants={itemVariants} className="text-white text-lg max-w-2xl mb-10 leading-relaxed">
             I am passionate about turning complex problems into intelligent, scalable solutions — whether that means fine-tuning language models, architecting cloud-native pipelines, or shipping full-stack applications from backend to mobile. I thrive at the intersection of AI research and real-world engineering, where ideas meet production.
           </motion.p>
 
@@ -176,7 +176,7 @@ export default function Home() {
           transition={{ delay: 1.5 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[#94A3B8] text-xs font-mono tracking-widest">SCROLL</span>
+          <span className="text-white text-xs font-mono tracking-widest">SCROLL</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -201,7 +201,7 @@ export default function Home() {
               <p className="text-3xl font-bold gradient-text font-display mb-1">
                 {statsVisible ? <Counter target={stat.value} /> : stat.value}
               </p>
-              <p className="text-xs text-[#94A3B8] leading-snug">{stat.label}</p>
+              <p className="text-xs text-white leading-snug">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -262,7 +262,7 @@ export default function Home() {
           <div className="orb" style={{ width: 400, height: 400, background: "radial-gradient(circle, rgba(250, 204, 21,0.15) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
           <p className="section-label justify-center">Open to opportunities</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">Let's Build Something Together</h2>
-          <p className="text-[#94A3B8] max-w-lg mx-auto mb-8">
+          <p className="text-white max-w-lg mx-auto mb-8">
             Looking for AI developer roles, internships, and freelance collaborations. I respond within 24 hours.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
