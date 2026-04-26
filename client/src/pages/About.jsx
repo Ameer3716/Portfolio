@@ -24,7 +24,7 @@ const timelineItems = [
   },
   {
     year: "2022",
-    title: "Started CS Journey",
+    title: "Started SE Journey",
     subtitle: "FAST-NUCES",
     desc: "Enrolled in Software Engineering. Began with algorithms, data structures, and web fundamentals.",
   },

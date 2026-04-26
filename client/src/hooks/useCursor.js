@@ -52,7 +52,7 @@ export function useCursor() {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [isMobile]);
 
   return { dotRef, ringRef, isMobile };
 }

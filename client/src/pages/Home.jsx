@@ -117,12 +117,24 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* Name */}
+          {/* Name with flowing animation */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight animate-color-shift"
+            className="font-display text-6xl md:text-8xl font-semibold leading-none mb-4 tracking-tight"
           >
-            Ameer Sultan
+            {"Ameer Sultan".split("").map((char, i) => (
+              <motion.span
+                key={i}
+                className={char === " " ? "" : "animate-flowing-color"}
+                style={{
+                  display: "inline-block",
+                  animation: char === " " ? "none" : `flowingWave 2.5s ease-in-out infinite, flowingColorWave 3s ease-in-out infinite`,
+                  animationDelay: `${i * 0.08}s, ${i * 0.15}s`,
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           {/* Animated role */}
@@ -167,21 +179,6 @@ export default function Home() {
               <FiDownload /> CV
             </a>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll indicator - Hidden on mobile */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
-        >
-          <span className="text-white text-xs font-mono tracking-widest">SCROLL</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-0.5 h-8 rounded-full bg-gradient-to-b from-[#FACC15] to-transparent"
-          />
         </motion.div>
       </section>
 

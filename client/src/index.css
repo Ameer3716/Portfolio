@@ -117,6 +117,48 @@ body {
   animation: colorShift 4s ease-in-out infinite;
 }
 
+/* ── FLOWING COLOR WAVE ANIMATION ──────────────────────────────── */
+@keyframes flowingColorWave {
+  0% { 
+    color: #FFFFFF; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 
+                 0 0 20px rgba(250, 204, 21, 0.1);
+  }
+  25% { 
+    color: #FEF08A; 
+    text-shadow: 0 0 20px rgba(254, 240, 138, 0.5),
+                 0 0 30px rgba(250, 204, 21, 0.3);
+  }
+  50% { 
+    color: #FACC15; 
+    text-shadow: 0 0 30px rgba(250, 204, 21, 0.8),
+                 0 0 50px rgba(250, 204, 21, 0.4);
+  }
+  75% { 
+    color: #FDE047; 
+    text-shadow: 0 0 20px rgba(253, 224, 71, 0.6),
+                 0 0 30px rgba(250, 204, 21, 0.2);
+  }
+  100% { 
+    color: #FFFFFF; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                 0 0 20px rgba(250, 204, 21, 0.1);
+  }
+}
+
+.animate-flowing-color {
+  animation: flowingColorWave 3s ease-in-out infinite;
+}
+/* ── FLOWING WAVE ANIMATION ─────────────────────────────────── */
+@keyframes flowingWave {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-8px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-flowing {
+  animation: flowingWave 2.5s ease-in-out infinite;
+}
 /* ── CARD STYLES ─────────────────────────────────────────────────── */
 .card-glass {
   background: rgba(5, 5, 5, 0.6);
