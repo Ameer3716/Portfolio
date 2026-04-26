@@ -104,6 +104,19 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* ── COLOR SHIFT ANIMATION ─────────────────────────────────────── */
+@keyframes colorShift {
+  0% { color: #FFFFFF; text-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
+  25% { color: #FACC15; text-shadow: 0 0 30px rgba(250, 204, 21, 0.6); }
+  50% { color: #FDE047; text-shadow: 0 0 40px rgba(253, 224, 71, 0.6); }
+  75% { color: #FEF08A; text-shadow: 0 0 30px rgba(254, 240, 138, 0.5); }
+  100% { color: #FFFFFF; text-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
+}
+
+.animate-color-shift {
+  animation: colorShift 4s ease-in-out infinite;
+}
+
 /* ── CARD STYLES ─────────────────────────────────────────────────── */
 .card-glass {
   background: rgba(5, 5, 5, 0.6);

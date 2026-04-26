@@ -120,7 +120,7 @@ export default function Home() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight"
+            className="font-display text-6xl md:text-8xl font-semibold text-white leading-none mb-4 tracking-tight animate-color-shift"
           >
             Ameer Sultan
           </motion.h1>
@@ -169,12 +169,12 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Hidden on mobile */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
         >
           <span className="text-white text-xs font-mono tracking-widest">SCROLL</span>
           <motion.div

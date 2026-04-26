@@ -1,13 +1,21 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useCursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
-    if (!dot || !ring) return;
+    if (!dot || !ring || isMobile) return;
 
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
@@ -46,7 +54,7 @@ export function useCursor() {
     };
   }, []);
 
-  return { dotRef, ringRef };
+  return { dotRef, ringRef, isMobile };
 }
 
 export function useScrollProgress() {

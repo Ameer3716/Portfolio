@@ -32,14 +32,14 @@ function AnimatedRoutes() {
 }
 
 function AppInner() {
-  const { dotRef, ringRef } = useCursor();
+  const { dotRef, ringRef, isMobile } = useCursor();
   const progressRef = useScrollProgress();
 
   return (
     <div className="noise">
-      {/* Custom cursor */}
-      <div ref={dotRef} className="cursor-dot" />
-      <div ref={ringRef} className="cursor-ring" />
+      {/* Custom cursor - Hidden on mobile */}
+      {!isMobile && <div ref={dotRef} className="cursor-dot" />}
+      {!isMobile && <div ref={ringRef} className="cursor-ring" />}
       {/* Scroll progress */}
       <div ref={progressRef} className="scroll-progress" style={{ width: "100%", transform: "scaleX(0)" }} />
 
