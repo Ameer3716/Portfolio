@@ -64,7 +64,7 @@ export default function Footer() {
         <div className="flex items-center justify-between border-t border-white/5 pt-6">
           <p className="text-white text-xs">
             Built with{" "}
-            <span className="text-[#FACC15]">React</span> +{" "}
+            <span className="text-[#FACC15]">Next.js</span> +{" "}
             <span className="text-[#FACC15]">Framer Motion</span> +{" "}
             <span className="text-[#FACC15]">Tailwind CSS</span>
           </p>

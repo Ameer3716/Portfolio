@@ -184,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* ── STATS ───────────────────────────────────────────────── */}
-      <section ref={statsRef} className="py-6 px-6 max-w-6xl mx-auto">
+      <section ref={statsRef} className="py-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((stat, i) => (
             <motion.div
@@ -209,7 +209,7 @@ export default function Home() {
       <SkillsSection />
 
       {/* ── FEATURED PROJECTS ───────────────────────────────────── */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
+      <section className="py-24 px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA STRIP ───────────────────────────────────────────── */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
+      <section className="py-24 px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -33,15 +33,15 @@ export default function SkillsSection() {
   const [hoveredGroup, setHoveredGroup] = useState(null);
 
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto">
+    <section className="py-24 px-6 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mb-12"
+        className="mb-10"
       >
         <p className="section-label">What I work with</p>
-        <h2 className="font-display text-4xl font-extrabold text-white">Technical Arsenal</h2>
+        <h2 className="font-display text-4xl font-bold text-white">Technical Arsenal</h2>
         <div className="section-divider" />
       </motion.div>
 
@@ -119,7 +119,7 @@ export default function SkillsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="mt-10 card-glass p-8"
+        className="mt-10 card-glass p-6"
       >
         <h3 className="font-semibold text-white mb-6 text-sm tracking-wide uppercase">Core Proficiency</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

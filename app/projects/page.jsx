@@ -12,7 +12,7 @@ export default function Projects() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <div className="min-h-screen pt-28 pb-20 px-6 max-w-6xl mx-auto">
+    <div className="min-h-screen pt-28 pb-24 px-6 max-w-6xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <p className="section-label">My work</p>
         <h1 className="font-display text-5xl font-bold text-white mb-2">

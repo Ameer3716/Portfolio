@@ -76,10 +76,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-28 pb-20 px-6 max-w-5xl mx-auto">
+    <div className="min-h-screen pt-28 pb-24 px-6 max-w-6xl mx-auto">
       <motion.div variants={containerVariants} initial="hidden" animate="visible">
         {/* Header */}
-        <motion.div variants={itemVariants} className="mb-14">
+        <motion.div variants={itemVariants} className="mb-12">
           <p className="section-label">Let's connect</p>
           <h1 className="font-display text-5xl font-bold text-white mb-2">
             Get In <span className="gradient-text-animate">Touch</span>
@@ -93,7 +93,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-5 gap-10">
           {/* Form */}
           <motion.div variants={itemVariants} className="md:col-span-3">
-            <form onSubmit={handleSubmit} className="card-glass p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="card-glass p-6 space-y-5">
               <FloatingInput
                 label="Your Name"
                 value={form.name}

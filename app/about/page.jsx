@@ -42,10 +42,10 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-28 pb-20 px-6 max-w-5xl mx-auto">
+    <div className="min-h-screen pt-28 pb-24 px-6 max-w-6xl mx-auto">
       <motion.div variants={containerVariants} initial="hidden" animate="visible">
         {/* Header */}
-        <motion.div variants={itemVariants} className="mb-14">
+        <motion.div variants={itemVariants} className="mb-12">
           <p className="section-label">Who I am</p>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-3">
             Ameer <span className="gradient-text-animate">Sultan</span>
@@ -56,10 +56,10 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-5 gap-12 items-start">
+        <div className="grid md:grid-cols-5 gap-10 items-start">
           {/* Left - Bio + Links */}
           <motion.div variants={itemVariants} className="md:col-span-3 space-y-6">
-            <div className="card-glass p-7">
+            <div className="card-glass p-6">
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="text-[#FACC15]">//</span> About Me
               </h3>
@@ -82,7 +82,7 @@ export default function About() {
             </div>
 
             {/* Links */}
-            <div className="card-glass p-7">
+            <div className="card-glass p-6">
               <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="text-[#FACC15]">//</span> Find Me
               </h3>
