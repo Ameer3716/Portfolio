@@ -42,14 +42,14 @@ export default function Projects() {
               whileTap={{ scale: 0.96 }}
               className={`relative text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 flex items-center gap-1.5 ${
                 active === cat
-                  ? "bg-[#FACC15] text-white border-[#FACC15] shadow-lg shadow-[#FACC15]/30"
-                  : "border-white/10 text-white hover:border-[#FACC15]/40 hover:text-white"
+                  ? "bg-[#FACC15] text-black border-[#FACC15] shadow-lg shadow-[#FACC15]/30"
+                  : "border-white/10 text-white hover:border-[#FACC15]/40"
               }`}
             >
               {cat}
               <span
                 className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                  active === cat ? "bg-white/20 text-white" : "bg-white/5 text-white"
+                  active === cat ? "bg-black/20 text-black" : "bg-white/5 text-white"
                 }`}
               >
                 {count}

@@ -64,9 +64,9 @@ export default function ProjectCard({ project, index }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-[0.95rem] font-bold text-white leading-snug relative z-10 group-hover:text-[#FEF08A] transition-colors duration-200">
+        <h2 className="text-[0.95rem] font-bold text-white leading-snug relative z-10 group-hover:text-[#FEF08A] transition-colors duration-200">
           {project.title}
-        </h3>
+        </h2>
 
         {/* Description */}
         <p className="text-sm text-white leading-relaxed flex-1 relative z-10">
@@ -98,6 +98,7 @@ export default function ProjectCard({ project, index }) {
             href={project.github}
             target="_blank"
             rel="noreferrer"
+            aria-label={`GitHub repository for ${project.title}`}
             className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors"
           >
             <FiGithub size={13} /> GitHub
@@ -107,6 +108,7 @@ export default function ProjectCard({ project, index }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
+              aria-label={`Live demo for ${project.title}`}
               className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors"
             >
               <FiExternalLink size={13} /> Live Demo
