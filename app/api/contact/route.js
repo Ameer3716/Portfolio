@@ -2,14 +2,14 @@ import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gqjekboujbchlqjajpkv.supabase.co';
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req) {
   try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gqjekboujbchlqjajpkv.supabase.co';
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy_key_for_build';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const resend = new Resend(process.env.RESEND_API_KEY || 'dummy_key');
+
     const body = await req.json();
     const { name, email, message } = body;
 
