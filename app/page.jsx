@@ -156,7 +156,7 @@ export default function Home() {
           </motion.div>
 
           {/* Description */}
-          <motion.p variants={itemVariants} className="text-white text-lg max-w-2xl mb-10 leading-relaxed">
+          <motion.p variants={itemVariants} className="text-white text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
             I am passionate about turning complex problems into intelligent, scalable solutions - whether that means fine-tuning language models, architecting cloud-native pipelines, or shipping full-stack applications from backend to mobile. I thrive at the intersection of AI research and real-world engineering, where ideas meet production.
           </motion.p>
 
@@ -184,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* ── STATS ───────────────────────────────────────────────── */}
-      <section ref={statsRef} className="py-24 px-6 max-w-6xl mx-auto">
+      <section ref={statsRef} className="py-16 md:py-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((stat, i) => (
             <motion.div
@@ -196,7 +196,7 @@ export default function Home() {
               className="stat-card"
             >
               <div className="text-2xl mb-2">{stat.icon}</div>
-              <p className="text-3xl font-bold gradient-text font-display mb-1">
+              <p className="text-2xl md:text-3xl font-bold gradient-text font-display mb-1">
                 {statsVisible ? <Counter target={stat.value} /> : stat.value}
               </p>
               <p className="text-xs text-white leading-snug">{stat.label}</p>
@@ -209,7 +209,7 @@ export default function Home() {
       <SkillsSection />
 
       {/* ── FEATURED PROJECTS ───────────────────────────────────── */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA STRIP ───────────────────────────────────────────── */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ export default function Home() {
               Get In Touch <FiArrowRight />
             </Link>
             <a href="mailto:ameersultan0310@gmail.com" className="btn-outline">
-              <FiMail /> ameersultan0310@gmail.com
+              <FiMail /> <span className="hidden sm:inline">ameersultan0310@gmail.com</span><span className="sm:hidden">Email Me</span>
             </a>
           </div>
         </motion.div>

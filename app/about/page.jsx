@@ -47,7 +47,7 @@ export default function About() {
         {/* Header */}
         <motion.div variants={itemVariants} className="mb-12">
           <p className="section-label">Who I am</p>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-3">
+          <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-3">
             Ameer <span className="gradient-text-animate">Sultan</span>
           </h1>
           <div className="section-divider" />

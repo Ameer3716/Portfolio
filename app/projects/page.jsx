@@ -15,7 +15,7 @@ export default function Projects() {
     <div className="min-h-screen pt-28 pb-24 px-6 max-w-6xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <p className="section-label">My work</p>
-        <h1 className="font-display text-5xl font-bold text-white mb-2">
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2">
           All <span className="gradient-text">Projects</span>
         </h1>
         <div className="section-divider" />
@@ -30,7 +30,7 @@ export default function Projects() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15 }}
-        className="flex flex-wrap gap-2 mb-10"
+        className="flex flex-nowrap overflow-x-auto pb-4 mb-6 md:flex-wrap md:pb-0 md:mb-10 gap-2 no-scrollbar"
       >
         {categories.map((cat) => {
           const count = cat === "All" ? projects.length : projects.filter((p) => p.category === cat).length;
@@ -40,7 +40,7 @@ export default function Projects() {
               onClick={() => setActive(cat)}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className={`relative text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 flex items-center gap-1.5 ${
+              className={`flex-shrink-0 relative text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all duration-200 flex items-center gap-1.5 ${
                 active === cat
                   ? "bg-[#FACC15] text-black border-[#FACC15] shadow-lg shadow-[#FACC15]/30"
                   : "border-white/10 text-white hover:border-[#FACC15]/40"

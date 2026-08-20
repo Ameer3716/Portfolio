@@ -81,7 +81,7 @@ export default function Contact() {
         {/* Header */}
         <motion.div variants={itemVariants} className="mb-12">
           <p className="section-label">Let's connect</p>
-          <h1 className="font-display text-5xl font-bold text-white mb-2">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2">
             Get In <span className="gradient-text-animate">Touch</span>
           </h1>
           <div className="section-divider" />

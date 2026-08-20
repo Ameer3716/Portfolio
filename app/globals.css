@@ -72,6 +72,13 @@ body {
   background: linear-gradient(180deg, #FACC15, #FDE047);
   border-radius: 4px;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* ── SCROLL PROGRESS BAR ─────────────────────────────────────────── */
 .scroll-progress {
@@ -154,6 +161,11 @@ body {
 .card-glass:hover {
   border-color: rgba(250, 204, 21,0.35);
   box-shadow: 0 0 40px rgba(250, 204, 21,0.15), 0 20px 40px rgba(0,0,0,0.3);
+}
+@media (max-width: 640px) {
+  .card-glass {
+    border-radius: 14px;
+  }
 }
 
 .card-glow {

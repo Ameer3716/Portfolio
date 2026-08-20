@@ -99,7 +99,7 @@ export default function ProjectCard({ project, index }) {
             target="_blank"
             rel="noreferrer"
             aria-label={`GitHub repository for ${project.title}`}
-            className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors"
+            className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors min-h-[44px] py-2"
           >
             <FiGithub size={13} /> GitHub
           </a>
@@ -109,7 +109,7 @@ export default function ProjectCard({ project, index }) {
               target="_blank"
               rel="noreferrer"
               aria-label={`Live demo for ${project.title}`}
-              className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors"
+              className="flex items-center gap-1.5 text-xs text-white hover:text-[#FEF08A] transition-colors min-h-[44px] py-2"
             >
               <FiExternalLink size={13} /> Live Demo
             </a>

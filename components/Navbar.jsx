@@ -112,7 +112,7 @@ export default function Navbar() {
                   transition={{ delay: i * 0.06 }}
                 >
                   <Link href={l.to}
-                    className={`block py-2 text-sm font-medium ${
+                    className={`block py-3 text-base font-medium ${
                       pathname === l.to ? "text-[#FEF08A]" : "text-white"
                     }`}
                   >
