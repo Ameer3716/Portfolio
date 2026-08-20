@@ -121,7 +121,7 @@ export default function Home() {
           {/* Name with flowing animation */}
           <motion.h1
             variants={itemVariants}
-            className="font-display text-6xl md:text-8xl font-semibold leading-none mb-4 tracking-tight"
+            className="font-display text-[11vw] sm:text-5xl md:text-7xl lg:text-8xl font-semibold leading-none mb-4 tracking-tight whitespace-nowrap"
           >
             {"Ameer Sultan".split("").map((char, i) => (
               <motion.span
