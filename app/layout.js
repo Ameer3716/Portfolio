@@ -6,6 +6,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL('https://portfolio-next.vercel.app'),
   title: "Ameer Sultan | AI & Full Stack Developer",
   description: "Portfolio of Ameer Sultan, specializing in AI, Full Stack, and Cloud Engineering. Building scalable intelligent systems and robust cloud architectures.",
   icons: {

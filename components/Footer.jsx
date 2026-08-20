@@ -52,6 +52,7 @@ export default function Footer() {
                 href={s.href}
                 target={s.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
+                aria-label={`Link to ${s.href}`}
                 className="text-white hover:text-[#FACC15] transition-colors"
               >
                 {s.icon}
@@ -69,6 +70,7 @@ export default function Footer() {
           </p>
           <motion.button
             onClick={scrollTop}
+            aria-label="Scroll to top"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.9 }}
             className="w-9 h-9 rounded-xl bg-[#111111] border border-white/10 flex items-center justify-center text-white hover:text-[#FACC15] hover:border-[#FACC15]/30 transition-all"

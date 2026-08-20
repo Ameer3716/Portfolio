@@ -1,28 +1,9 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 export default function ProjectCard({ project, index }) {
-  const cardRef = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const springConfig = { stiffness: 200, damping: 25 };
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), springConfig);
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), springConfig);
-  const glowX = useTransform(x, [-0.5, 0.5], ["0%", "100%"]);
-  const glowY = useTransform(y, [-0.5, 0.5], ["0%", "100%"]);
-
-  const handleMouseMove = (e) => {
-    const el = cardRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-  const handleMouseLeave = () => { x.set(0); y.set(0); };
-
   const categoryColors = {
     "AI": "#FACC15",
     "Backend": "#FDE047",
@@ -44,32 +25,15 @@ export default function ProjectCard({ project, index }) {
 
   return (
     <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45, delay: index * 0.07 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-        perspective: 1000,
-      }}
+      transition={{ duration: 0.45, delay: index * 0.05 }}
       className="relative group h-full"
     >
       <div
-        className="relative bg-[#0A0A0A]/70 backdrop-blur-sm rounded-2xl border border-white/5 p-6 flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 group-hover:border-[#FACC15]/30"
-        style={{ transform: "translateZ(0)" }}
+        className="relative bg-[#0A0A0A]/70 backdrop-blur-sm rounded-2xl border border-white/5 p-6 flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 group-hover:border-[#FACC15]/30 group-hover:-translate-y-1 group-hover:shadow-[0_8px_30px_rgba(250,204,21,0.12)]"
       >
-        {/* Dynamic glow on hover */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(circle at ${glowX.get()} ${glowY.get()}, ${catColor}15 0%, transparent 60%)`,
-          }}
-        />
 
         {/* Top row: category + badge + icon */}
         <div className="flex items-center justify-between relative z-10">
