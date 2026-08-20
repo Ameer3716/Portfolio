@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AppWrapper from "@/components/AppWrapper";
-import Script from "next/script";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -44,11 +42,6 @@ export default function RootLayout({ children }) {
         <AppWrapper>
           {children}
         </AppWrapper>
-        <Script 
-          src="https://ai-support-agent-1biy.onrender.com/widget/embed.js" 
-          data-client="8a7234342e10d85e" 
-          strategy="lazyOnload" 
-        />
       </body>
     </html>
   );
