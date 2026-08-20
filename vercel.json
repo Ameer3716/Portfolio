@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "server/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/projects/(.*)",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/contact/(.*)",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/ai-demo/(.*)",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/health",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/$1"
+    }
+  ]
+}
